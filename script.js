@@ -5,9 +5,9 @@ var url = "https://unitube-server.herokuapp.com/playlists"
 
 function errorHandler(){
 fetch(url).then(response => {
-  if(error === 404){
+  if(response.status === 404){
     outputDiv.innnerText = "page not found"
-  }else if(error === 401){
+  }else if(response.status === 401){
     outputDiv.innerText = "please log in to continue"
   }else {
     return response.json();
