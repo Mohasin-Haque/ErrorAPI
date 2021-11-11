@@ -9,7 +9,9 @@ fetch(url).then(response => {
     outputDiv.innnerText = "page not found"
   }else if(response.status === 401){
     outputDiv.innerText = "please log in to continue"
-  }else {
+  }else if(response.status === 200){
+    outputDiv.innerText = "you are good to go"
+  }else{
     return response.json();
   }
 });
